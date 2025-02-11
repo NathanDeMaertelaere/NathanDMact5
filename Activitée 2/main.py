@@ -4,6 +4,8 @@ from flask import Flask, render_template, request, abort, session
 #Import de os
 import os
 
+from questions import questions
+
 # CREATION DE L'APP
 # On crée une instance de flask qui est donc notre app qu'on stocke dans la variable app
 app = Flask("My first WebApp")
@@ -24,10 +26,10 @@ def index():
     session["score"] =  {"Link" : 0, "Sheik" : 0, "Zelda" : 0, "Tingle" : 0}
     return render_template("index.html")
 
-@app.route('/scndpage')
-def scnd():
-    erreur = "403 Acces denied"
-    return render_template("scndpage.html", erreur=erreur)
+@app.route('/question')
+def question():
+    global questions
+    return render_template("question.html")
 
 # EXECUTION
 # host = 0.0.0.0 -> app accessible par n'importe quelle adresse IP
