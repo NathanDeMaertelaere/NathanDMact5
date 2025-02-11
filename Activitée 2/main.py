@@ -21,7 +21,7 @@ def limit_remote_addr():
 @app.route('/')
 def index():
     session["numero_question"]= 0
-    session["score"] =  {}
+    session["score"] =  {"Link" : 0, "Sheik" : 0, "Zelda" : 0, "Tingle" : 0}
     return render_template("index.html")
 
 @app.route('/scndpage')
