@@ -29,7 +29,24 @@ def index():
 @app.route('/question')
 def question():
     global questions
-    return render_template("question.html")
+
+    numero = session["numero_question"]
+
+    if numero < len(questions):
+        #On recup l'énoncé
+        question = questions[numero]["enonce"]
+        #On fait une copie du dictionnaire de nos questions
+        questions_copy = questions[numero].copy()
+        #On suppr l'énoncé
+        questions_copy.pop("enonce")
+        #On recupere les reponses sous forme de list
+        reponses = list(questions_copy.values())
+        #On recupere les clefs = personnages sous forme du listes
+        clefs = list(questions_copy.keys())
+
+        session["clefs"] = clefs
+        return render_template("question.html", question = question, reponses = reponses)
+
 
 # EXECUTION
 # host = 0.0.0.0 -> app accessible par n'importe quelle adresse IP
