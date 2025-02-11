@@ -1,9 +1,13 @@
 # On importe Flask du module Flask
 from flask import Flask, render_template, request, abort, session
 
+#Import de os
+import os
+
 # CREATION DE L'APP
 # On crée une instance de flask qui est donc notre app qu'on stocke dans la variable app
 app = Flask("My first WebApp")
+app.secret_key = os.urandom(24)
 
 HOST_IP = "192.168.1.24" 
 
@@ -16,6 +20,8 @@ def limit_remote_addr():
 # Route de la page d'accueil
 @app.route('/')
 def index():
+    session["numero_question"]= 0
+    session["score"] =  {}
     return render_template("index.html")
 
 @app.route('/scndpage')
