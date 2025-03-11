@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <title>Page Index</title>
+    <title>Quizz Zelda</title>
 </head>
 <body>
     <header class="bg-amber-300 text-center text-white text-3xl font-bold p-4">
         <h1>Quel personnage de Zelda es-tu ?</h1>
     </header>
 
-    <main class="text-center p-6">
-        <div class="flex justify-center">
-            <img src="/Activitée 2/static/zelda.jpeg">
+    <main class="text-center p-6" >
+        <h1 class = "text-center font-mono text-2xl">{{question}}</h1>
+        <div class="flex justify-center p-6 text-xl">
+            <ul>
+                <li><a href="/reponse/0">{{reponses[0]}}</a></li>
+                <li><a href="/reponse/1">{{reponses[1]}}</a></li>
+                <li><a href="/reponse/2">{{reponses[2]}}</a></li>
+                <li><a href="/reponse/3">{{reponses[3]}}</a></li>
+            </ul>
         </div>
-        <a class="bg-amber-200 hover:bg-amber-300 p-3 rounded-lg border border-black-300" href="question">C'est parti !</a>
+
     </main>
 
-    <footer class="bg-amber-300 text-center text-white text-3xl font-bold p-4 ">
+    <footer class="fixed bottom-0 w-full bg-amber-300 text-center text-white text-3xl font-bold p-4 ">
         <p>Copyright © Nintendo</p>
     </footer>
-    
 </body>
 </html>
