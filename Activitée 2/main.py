@@ -8,7 +8,7 @@ import os
 from questions import questions
 
 # On importe les descriptions pour le resultats
-from questions import questions
+from questions import questions as resultats
 
 # CREATION DE l'APP
 # On crée une instance de Flask qui est donc notre app qu'on stocke dans la variable app
