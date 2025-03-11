@@ -19,7 +19,7 @@ app.secret_key = os.urandom(24)
 @app.route("/")
 def index():
     session["numero_question"] = 0
-    session["score"] = { "Pikachu" : 0, "Mew" : 0, "Salamèche" : 0, "Carapuce":0}
+    session["score"] =  {"Link" : 0, "Sheik" : 0, "Zelda" : 0, "Tingle" : 0}
     return render_template("index.html")
 
 # Route seconde Page
