@@ -1,5 +1,5 @@
 # On importe Flask du module flask
-from flask import Flask, render_template, session, redirect
+from flask import Flask, render_template, session, redirect, abort, request
 
 # Importation de os
 import os
@@ -14,6 +14,14 @@ from resultats import resultats
 # On crée une instance de Flask qui est donc notre app qu'on stocke dans la variable app
 app = Flask("Mon Super Quizz")
 app.secret_key = os.urandom(24)
+
+HOST_IP = "192.168.1.61" 
+
+@app.before_request
+def limit_remote_addr():
+    client_ip = request.remote_addr
+    if client_ip != HOST_IP:
+        abort(403) 
 
 # Route de notre page d'accueil qui est donc à la racine de notre app
 @app.route("/")
