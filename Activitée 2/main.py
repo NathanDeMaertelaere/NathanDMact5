@@ -8,7 +8,7 @@ import os
 from questions import questions
 
 # On importe les descriptions pour le resultats
-from resultats import resultats
+from questions import questions
 
 # CREATION DE l'APP
 # On crée une instance de Flask qui est donc notre app qu'on stocke dans la variable app
@@ -76,7 +76,6 @@ def reponse(numero):
     personnage = session["clefs"][int(numero)]
     # On incrémente le score du personnage dont la réponse est associée
     session["score"][personnage] += 1
-    session.modified = True 
     # On redirige vers le route question afin d'afficher la question suivante
     return redirect("/question")
 
