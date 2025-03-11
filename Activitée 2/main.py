@@ -76,6 +76,7 @@ def reponse(numero):
     personnage = session["clefs"][int(numero)]
     # On incrémente le score du personnage dont la réponse est associée
     session["score"][personnage] += 1
+    session.modified = True 
     # On redirige vers le route question afin d'afficher la question suivante
     return redirect("/question")
 
