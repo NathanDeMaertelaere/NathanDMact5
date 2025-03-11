@@ -1,8 +1,7 @@
 # clef : valeur
-resultats =   {
-    "Pikachu": "Tu es toujours là pour apporter de l'énergie et de l'enthousiasme.",
-    "Mew" : "Tu es le penseur tranquille, souvent en retrait, mais toujours observateur.",
-    "Salamèche" : "Tu es celui qui pousse tout le monde à l'aventure et à l'action.",
-    "Carapuce" : "Tu es le protecteur fiable, toujours prêt à aider et soutenir mes amis.",
-}
-
+resultats = {
+    "Link": "Tu es courageux et déterminé, prêt à affronter tous les défis pour protéger ceux qui comptent pour toi.",
+    "Sheik": "Tu es mystérieux et stratégique, préférant agir dans l'ombre pour guider et aider les autres.",
+    "Zelda": "Tu es sage et bienveillant, doté d'une grande intelligence et d'un profond sens du devoir.",
+    "Tingle": "Tu es excentrique et joyeux, apportant une touche de folie et de magie partout où tu vas.",
+};
